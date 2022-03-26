@@ -1,0 +1,3 @@
+Id,name,zip,taxRate,itemName,sellingPrice,deliveryCharges,totalPrice,balance,dateOfPurchase,isClosed
+1,Ranjith,90815,10,Stereos,1,1,2.1,0,3/26/2022,1
+2,Ranjith,90815,10,Stereos,1,1,2.1,2.1,3/26/2022,0
