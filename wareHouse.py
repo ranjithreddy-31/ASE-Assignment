@@ -7,6 +7,9 @@ class wareHouse:
 
     def addItem(self):
         item_name = input("\nChoose 1 to add Tv's or choose 2 to add Stereo: ")
+        if item_name not in ["1","2"]:
+            print("Incorrect choices please choose again")
+            self.addItem()
         ware_house_number = input("Choose 1 to add in warehouse 1 or choose 2 to add in warehouse 2: ")
         print()
         if item_name == '1' and ware_house_number == '1':
@@ -103,12 +106,12 @@ class wareHouse:
 
     def wareHouse(self):
         print()
-        print()
         print("Warehouse deails")
         print("1.Add item to inventory")
         print("2.Show quantity of each product by warehouse")
         print("3.Show products less than or equal to 5")
-        print("Press any other key to exit to main menu")
+        # print("Press any other key to exit to main menu")
+        print("Press any other key to exit")
         print()
         print()
         ware_house_input = input("Enter the number based on the operation that you want to perform: ")
@@ -119,5 +122,11 @@ class wareHouse:
         elif ware_house_input == '3':
             self.showItemsLessthanFive()
         else:
-            c = commonFunctions()
-            c.displayMenu()
+            # c = commonFunctions()
+            # c.displayMenu()
+            print("Thank you")
+            return exit
+
+
+w = wareHouse()
+w.wareHouse()

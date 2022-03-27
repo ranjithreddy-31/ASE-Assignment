@@ -84,7 +84,7 @@ class ownerLogin:
             if trychoice == '1':
                 self.resetPassword()
             else:
-                print("\nBye Bye! See you later")
+                print("\nThank you")
 
     def displayMenu(self):
         print("-----------Menu-----------")
@@ -123,19 +123,25 @@ class ownerLogin:
         if password == '1':
             print("Thank you")
         else:
-            passwordStatus = self.getPassword(password)
-            if passwordStatus == "Success":
-                menuStatus = self.displayMenu()
-                if menuStatus == "exit":
+            while True:
+                passwordStatus = self.getPassword(password)
+                if passwordStatus == "Success":
+                    # menuStatus = self.displayMenu()
+                    # if menuStatus == "exit":
+                    #     print("Thank you!")
                     print("Thank you!")
-            else:
-                print("Incorrect password\n")
-                isReset = input("Do you want to reset the password? \nPress 1 to reset or"
-                                " Press any other other key to quit: ")
-                if isReset.lower() == "1":
-                    self.resetPassword()
-                else:
-                    print("Try again later by entering the correct password!")
+                elif passwordStatus == "Incorrect":
+                    print("Incorrect password")
+                    reEnter = input("\nPress 1 to reenter or Press 2 to reset or "
+                                    " Press any other other key to quit: ")
+                    if reEnter.lower() == "1":
+                        password = input("\nReenter your password: ")
+                        continue
+                    elif reEnter.lower() == "2":
+                        self.resetPassword()
+                    else:
+                        print("Try again later by entering the correct password!")
+                break
 
 
 s = ownerLogin()

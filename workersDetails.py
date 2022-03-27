@@ -67,5 +67,11 @@ class workerDetails:
         elif ware_house_input == '2':
             self.updateCommission()
         else:
-            c = commonFunctions()
-            c.displayMenu()
+            # c = commonFunctions()
+            # c.displayMenu()
+            print("Thank you")
+            return exit
+
+
+wD = workerDetails()
+wD.workerDetails()
