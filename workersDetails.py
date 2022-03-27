@@ -7,7 +7,7 @@ class workerDetails:
     def showWorkerDetails(self):
         cols = [0, 1, 2, 3, 4]
         try:
-            excel = pd.read_csv('D:/LongBeach/Sem1/ASE/Project-csv/workersDetails.csv', usecols=cols)
+            excel = pd.read_csv('workersDetails.csv', usecols=cols)
             x = PrettyTable()
             x.field_names = list(excel.columns)
             for i in range(len(excel.index)):
@@ -21,7 +21,7 @@ class workerDetails:
     def checkUserExists(self, id):
         try:
             cols = [0, 1, 2, 3, 4]
-            excel = pd.read_csv('D:/LongBeach/Sem1/ASE/Project-csv/workersDetails.csv', usecols=cols)
+            excel = pd.read_csv('workersDetails.csv', usecols=cols)
             results = list(excel["person_id"])
             if id in results:
                 return True
@@ -35,10 +35,10 @@ class workerDetails:
             newPercentage = input("Enter the new commission percentage: ")
             try:
                 cols = [0, 1, 2, 3, 4]
-                excel = pd.read_csv('D:/LongBeach/Sem1/ASE/Project-csv/workersDetails.csv', usecols=cols)
+                excel = pd.read_csv('workersDetails.csv', usecols=cols)
                 excel.loc[int(userId) - 1, 'commission'] = float(newPercentage)
                 # writing into the file
-                excel.to_csv("D:/LongBeach/Sem1/ASE/Project-csv/workersDetails.csv", index=False)
+                excel.to_csv("workersDetails.csv", index=False)
                 print("Successfully updated new percentage")
 
             except Exception as e:

@@ -11,7 +11,7 @@ class ownerLogin:
     def getPassword(self, password):
         cols = [0, 1, 2]
 
-        excel = pd.read_csv('D:/LongBeach/Sem1/ASE/Project-csv/OwnerInfo.csv', usecols=cols)
+        excel = pd.read_csv('OwnerInfo.csv', usecols=cols)
         try:
             result = list(excel["Password"])
             if result[0] == password:
@@ -25,7 +25,7 @@ class ownerLogin:
     def getEmail(self, email):
         cols = [0, 1, 2]
 
-        excel = pd.read_csv('D:/LongBeach/Sem1/ASE/Project-csv/OwnerInfo.csv', usecols=cols)
+        excel = pd.read_csv('OwnerInfo.csv', usecols=cols)
         try:
             result = list(excel["Email"])
             if result[0] == email:
@@ -39,11 +39,11 @@ class ownerLogin:
     def updatePassword(self, newPassword):
         cols = [0, 1, 2]
 
-        excel = pd.read_csv('D:/LongBeach/Sem1/ASE/Project-csv/OwnerInfo.csv', usecols=cols)
+        excel = pd.read_csv('OwnerInfo.csv', usecols=cols)
         try:
             excel.loc[0, 'Password'] = newPassword
             # writing into the file
-            excel.to_csv("D:/LongBeach/Sem1/ASE/Project-csv/OwnerInfo.csv", index=False)
+            excel.to_csv("OwnerInfo.csv", index=False)
         except Exception as e:
             print(e)
         print("\n")
