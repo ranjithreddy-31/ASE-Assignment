@@ -216,21 +216,20 @@ class SalesDetails:
             #invoice_id = int(input('Enter invoice Id: '))
             print(self.closeInvoice(1))
         else:
-            c = commonFunctions()
-            c.displayMenu()
+            return quit
 
 
     def salesDetails(self):
         print('\nWelcome to Sales and Invoices module.')
         self.salesdisplayMenu()
 
-# files = {
-#             'Customers' : r'Customers.csv',
-#             'Invoices' : r'SalesDetails.csv',
-#             'Inventory' : r'Inventory.csv'
-#         }
-# s = SalesDetails(files)
-# s.salesdisplayMenu()
+files = {
+            'Customers' : r'Customers.csv',
+            'Invoices' : r'SalesDetails.csv',
+            'Inventory' : r'Inventory.csv'
+        }
+s = SalesDetails(files)
+s.salesdisplayMenu()
 
 
 
