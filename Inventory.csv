@@ -1,5 +1,5 @@
 product_id,product_name,product_price,product_quantity,product_warehouse
-1,Stereos,100,148,1
-2,Tv,50,50,1
-3,Stereos,100,148,2
-4,Tv,50,104,2
+1,Stereos,100,147,1
+2,Tv,50,60,1
+3,Stereos,100,147,2
+4,Tv,50,102,2
