@@ -1,5 +1,0 @@
-product_id,product_name,product_price,product_quantity,product_warehouse,selling_price,profit,profit_percentage
-1,Stereos,100,100,1,120,20,20
-2,Tv,50,153,1,200,50,33
-3,Stereos,100,152,2,120,20,20
-4,Tv,50,108,2,150,50,50

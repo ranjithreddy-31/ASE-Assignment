@@ -48,22 +48,22 @@ class wareHouse:
         self.wareHouse()
 
     def incrementItem(self, id):
-        cols = [0, 1, 2, 3, 4, 5, 6, 7]
+        cols = [0, 1, 2, 3, 4]
 
-        excel = pd.read_csv('Products.csv', usecols=cols)
+        excel = pd.read_csv('Inventory.csv', usecols=cols)
         try:
             quantity = int(input("Enter the number of items: "))
             excel.loc[id - 1, 'product_quantity'] += quantity
             # writing into the file
-            excel.to_csv("Products.csv", index=False)
+            excel.to_csv("Inventory.csv", index=False)
             print("Products added successfully")
         except Exception as e:
             print(e)
 
     def showItems(self):
         try:
-            cols = [0, 1, 2, 3, 4, 5, 6, 7]
-            excel = pd.read_csv('Products.csv', usecols=cols)
+            cols = [0, 1, 2, 3, 4]
+            excel = pd.read_csv('Inventory.csv', usecols=cols)
             x = PrettyTable()
             x.field_names = list(excel.columns)
             for i in range(4):
@@ -76,8 +76,8 @@ class wareHouse:
 
     def showItemsLessthanFive(self):
         try:
-            cols = [0, 1, 2, 3, 4, 5, 6, 7]
-            excel = pd.read_csv('Products.csv', usecols=cols)
+            cols = [0, 1, 2, 3, 4]
+            excel = pd.read_csv('Inventory.csv', usecols=cols)
             productQuantity = list(excel["product_quantity"])
             stereos = productQuantity[0] + productQuantity[2]
             tvs = productQuantity[1] + productQuantity[3]
