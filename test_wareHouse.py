@@ -1,11 +1,11 @@
 import unittest
-from wareHouse import wareHouse
+from wareHouse import WareHouse
 
 
 class TestWareHouseDetails(unittest.TestCase):
 
     def test_addItemFailure(self):
-        self.wareHouse = wareHouse()
+        self.wareHouse = WareHouse()
         # Test Invalid data cases
         return_result = self.wareHouse.incrementItem('tv', 'TV')
         assert False == return_result
@@ -122,7 +122,7 @@ class TestWareHouseDetails(unittest.TestCase):
         assert False == return_result
 
     def test_addItemSuccess(self):
-        self.wareHouse = wareHouse()
+        self.wareHouse = WareHouse()
 
         # Test Valid data cases
         return_result = self.wareHouse.incrementItem(1, 1)

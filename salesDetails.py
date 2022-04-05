@@ -1,6 +1,5 @@
 from datetime import datetime
 import pandas as pd
-from commonFunctions import *
 from tabulate import tabulate
 
 class SalesDetails:
@@ -292,7 +291,7 @@ class SalesDetails:
         print('3. Show open invoices')
         print('4. Show closed invoices')
         print('5. Manually close an Invoice')
-        print('6. Press any other key to exit to main menu')
+        print('6. Press any other key to exit')
         print()
         print()
         option = int(input('Select an option from the above menu: '))
@@ -319,3 +318,11 @@ class SalesDetails:
     def salesDetails(self):
         print('\nWelcome to Sales and Invoices module.')
         self.salesdisplayMenu()
+
+def main():
+    '''
+    main method to invoke SalesDetails object
+    '''
+    invoices = SalesDetails()
+    invoices.salesDetails()
+

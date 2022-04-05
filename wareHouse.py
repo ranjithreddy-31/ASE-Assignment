@@ -1,8 +1,7 @@
 from prettytable import PrettyTable
 import pandas as pd
 
-
-class wareHouse:
+class WareHouse:
 
     """
         Class 'wareHouse' handles different functionalities like:
@@ -13,7 +12,7 @@ class wareHouse:
 
     def addItem(self):
         """
-                This method is used to add items to warehouse.
+            This method is used to add items to warehouse.
         """
         item_name = input("\nChoose 1 to add Tv's or choose 2 to add Stereo: ")
         if item_name not in ["1", "2"]:
@@ -175,6 +174,9 @@ class wareHouse:
             print("Thank you")
             return exit
 
-#
-# w = wareHouse()
-# w.wareHouse()
+def main():
+    '''
+    main method to invoke SalesDetails object
+    '''
+    warehouse = WareHouse()
+    warehouse.wareHouse()
